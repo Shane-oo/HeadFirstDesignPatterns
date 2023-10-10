@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Chapter5.ChocoHolic;
+﻿using Chapter5.ChocoHolic;
 
 var chocolateBoiler = ChocolateBoiler.GetInstance();
 
@@ -12,3 +10,4 @@ chocolateBoiler2.Empty = false;
 
 Console.WriteLine(chocolateBoiler.Empty);
 Console.WriteLine(chocolateBoiler2.Empty);
+                                                                                           
