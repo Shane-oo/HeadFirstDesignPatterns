@@ -24,5 +24,10 @@ public class StereoOffCommand: ICommand
         _stereo.Off();
     }
 
+    public void Undo()
+    {
+        _stereo.On();
+    }
+
     #endregion
 }

@@ -12,6 +12,7 @@ public class RemoteControl
 
     private readonly ICommand[] _offCommands = new ICommand[SLOTS];
     private readonly ICommand[] _onCommands = new ICommand[SLOTS]; // 7 Slots on remote
+    private ICommand _undoCommand;
 
     #endregion
 
@@ -25,6 +26,8 @@ public class RemoteControl
             _onCommands[i] = noCommand;
             _offCommands[i] = noCommand;
         }
+
+        _undoCommand = noCommand;
     }
 
     #endregion
@@ -34,11 +37,13 @@ public class RemoteControl
     public void OffButtonWasPushed(int slot)
     {
         _offCommands[slot].Execute();
+        _undoCommand = _offCommands[slot];
     }
 
     public void OnButtonWasPushed(int slot)
     {
         _onCommands[slot].Execute();
+        _undoCommand = _onCommands[slot];
     }
 
     public void SetCommand(int slot, ICommand onCommand, ICommand offCommand)
@@ -47,12 +52,17 @@ public class RemoteControl
         _offCommands[slot] = offCommand;
     }
 
+    public void UndoButtonWasPushed()
+    {
+        _undoCommand.Undo();
+    }
+
     public override string ToString()
     {
         var toString = "\n------ Remote Control ------\n";
         for(var i = 0; i < _onCommands.Length; i++)
         {
-            toString += $"[slot {i}]" + _onCommands[i] + "     " + _offCommands[i] +"\n";
+            toString += $"[slot {i}]" + _onCommands[i] + "     " + _offCommands[i] + "\n";
         }
 
         return toString;

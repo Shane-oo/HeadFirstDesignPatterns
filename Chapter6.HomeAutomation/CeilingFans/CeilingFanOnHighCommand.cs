@@ -1,10 +1,10 @@
 namespace Chapter6.HomeAutomation.CeilingFans;
 
-public class CeilingFanHighCommand: ICommand
+public class CeilingFanOnHighCommand: ICommand
 {
     private readonly CeilingFan _ceilingFan;
 
-    public CeilingFanHighCommand(CeilingFan ceilingFan)
+    public CeilingFanOnHighCommand(CeilingFan ceilingFan)
     {
         _ceilingFan = ceilingFan;
     }
@@ -13,5 +13,10 @@ public class CeilingFanHighCommand: ICommand
     {
         _ceilingFan.High();
         _ceilingFan.GetSpeed();
+    }
+
+    public void Undo()
+    {
+        _ceilingFan.Off();
     }
 }

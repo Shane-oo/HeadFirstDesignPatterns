@@ -26,5 +26,10 @@ public class StereoOnWithCDCommand: ICommand
         _stereo.SetVolume(11);
     }
 
+    public void Undo()
+    {
+        _stereo.Off();
+    }
+
     #endregion
 }

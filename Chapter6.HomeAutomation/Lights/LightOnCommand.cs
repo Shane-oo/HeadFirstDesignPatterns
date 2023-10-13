@@ -24,5 +24,10 @@ public class LightOnCommand: ICommand
         _light.On();
     }
 
+    public void Undo()
+    {
+        _light.Off();
+    }
+
     #endregion
 }

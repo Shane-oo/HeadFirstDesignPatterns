@@ -24,5 +24,11 @@ public class CeilingFanOffCommand: ICommand
         _ceilingFan.Off();
     }
 
+    public void Undo()
+    {
+        _ceilingFan.High();
+        _ceilingFan.GetSpeed();
+    }
+
     #endregion
 }

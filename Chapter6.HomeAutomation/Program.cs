@@ -1,6 +1,7 @@
 ﻿using Chapter6.HomeAutomation;
 using Chapter6.HomeAutomation.CeilingFans;
 using Chapter6.HomeAutomation.Lights;
+using Chapter6.HomeAutomation.Macros;
 using Chapter6.HomeAutomation.Stereos;
 
 // Program.cs Is the Client
@@ -33,7 +34,7 @@ var livingRoomLightOffCommand = new LightOffCommand(livingRoomLight);
 var kitchenLightOnCommand = new LightOnCommand(kitchenLight);
 var kitchenLightLightOffCommand = new LightOffCommand(kitchenLight); 
 
-var ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
+var ceilingFanHighCommand = new CeilingFanOnHighCommand(ceilingFan);
 var ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
 
 var stereoOnWithCDCommand = new StereoOnWithCDCommand(stereo);
@@ -49,9 +50,33 @@ Console.WriteLine(remoteControl.ToString());
 
 remoteControl.OnButtonWasPushed(0);
 remoteControl.OffButtonWasPushed(0);
+Console.WriteLine(remoteControl.ToString());
+remoteControl.UndoButtonWasPushed();
 remoteControl.OnButtonWasPushed(1);
 remoteControl.OffButtonWasPushed(1);
 remoteControl.OnButtonWasPushed(2);
 remoteControl.OffButtonWasPushed(2);
 remoteControl.OnButtonWasPushed(3);
+Console.WriteLine(remoteControl.ToString());
 remoteControl.OffButtonWasPushed(3);
+remoteControl.UndoButtonWasPushed();
+
+
+// Macros
+var partyOn = new ICommand[]{livingRoomLightOnCommand, stereoOnWithCDCommand,ceilingFanHighCommand,kitchenLightOnCommand};
+var partyOff = new ICommand[]{livingRoomLightOffCommand,stereoOffCommand,ceilingFanOffCommand,kitchenLightLightOffCommand};
+
+var partyOnMacro = new MacroCommand(partyOn);
+
+
+var partyOffMacro = new MacroCommand(partyOff);
+remoteControl.SetCommand(6,partyOnMacro,partyOffMacro);
+
+Console.WriteLine(remoteControl.ToString());
+Console.WriteLine("Pushing On Macro");
+remoteControl.OnButtonWasPushed(6);
+Console.WriteLine("Pushing Off Macro");
+remoteControl.OffButtonWasPushed(6);
+
+Console.WriteLine("Undo Macro");
+remoteControl.UndoButtonWasPushed();
