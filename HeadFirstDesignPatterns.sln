@@ -1,20 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter1.SimUDuck", "Chapter1.SimUDuck\Chapter1.SimUDuck.csproj", "{2BF17A01-28E1-4C6A-8242-94FA1DFA556B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter1.SimUDuck.StrategyPattern", "Chapter1.SimUDuck.StrategyPattern\Chapter1.SimUDuck.StrategyPattern.csproj", "{2BF17A01-28E1-4C6A-8242-94FA1DFA556B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter2.WeatherStation", "Chapter2.WeatherStation\Chapter2.WeatherStation.csproj", "{C66551E5-A499-47DE-A360-FC0F409E54D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter2.WeatherStation.ObserverPattern", "Chapter2.WeatherStation.ObserverPattern\Chapter2.WeatherStation.ObserverPattern.csproj", "{C66551E5-A499-47DE-A360-FC0F409E54D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter3.Starbuzz", "Chapter3.Starbuzz\Chapter3.Starbuzz.csproj", "{71ABBB30-ABF0-46F8-AE60-3918746204D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter3.Starbuzz.DecoratorPattern", "Chapter3.Starbuzz.DecoratorPattern\Chapter3.Starbuzz.DecoratorPattern.csproj", "{71ABBB30-ABF0-46F8-AE60-3918746204D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter4.PizzaStores", "Chapter4.PizzaStores\Chapter4.PizzaStores.csproj", "{E69BFC93-EB09-4C03-8D7E-6D25F968E73D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter4.PizzaStores.FactoryMethodAndAbstractFactoryPatterns", "Chapter4.PizzaStores.FactoryMethodAndAbstractFactoryPatterns\Chapter4.PizzaStores.FactoryMethodAndAbstractFactoryPatterns.csproj", "{E69BFC93-EB09-4C03-8D7E-6D25F968E73D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter5.ChocoHolic", "Chapter5.ChocoHolic\Chapter5.ChocoHolic.csproj", "{C4D8DA38-2A92-4649-A12F-446476740C35}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter5.ChocoHolic.SingletonPattern", "Chapter5.ChocoHolic.SingletonPattern\Chapter5.ChocoHolic.SingletonPattern.csproj", "{C4D8DA38-2A92-4649-A12F-446476740C35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter6.HomeAutomation", "Chapter6.HomeAutomation\Chapter6.HomeAutomation.csproj", "{CFA58B54-15AB-4048-87DA-55A009BB66C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter6.HomeAutomation.CommandPattern", "Chapter6.HomeAutomation.CommandPattern\Chapter6.HomeAutomation.CommandPattern.csproj", "{CFA58B54-15AB-4048-87DA-55A009BB66C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter7.TurkeyAdapter", "Chapter7.TurkeyAdapter\Chapter7.TurkeyAdapter.csproj", "{A9B68A20-F0DC-40D6-B117-E3CD455F4949}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter7.TurkeyAdapter.AdapterPattern", "Chapter7.TurkeyAdapter.AdapterPattern\Chapter7.TurkeyAdapter.AdapterPattern.csproj", "{A9B68A20-F0DC-40D6-B117-E3CD455F4949}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter7.HomeTheater", "Chapter7.HomeTheater\Chapter7.HomeTheater.csproj", "{4FD220E9-815E-4C5D-8192-E29583173125}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter7.HomeTheater.FacadePattern", "Chapter7.HomeTheater.FacadePattern\Chapter7.HomeTheater.FacadePattern.csproj", "{4FD220E9-815E-4C5D-8192-E29583173125}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
