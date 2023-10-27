@@ -1,11 +1,34 @@
+using System.Collections;
+
 namespace Chapter9.IteratorPattern.Menus.Iterators;
 
-public class DinerMenuIterator: IIterator<MenuItem>
+public class DinerMenuIterator: IEnumerator<MenuItem>
 {
     #region Fields
 
     private readonly MenuItem[] _menuItems;
-    private int _position;
+    private int _position = -1;
+
+    #endregion
+
+    #region Properties
+
+    public MenuItem Current
+    {
+        get
+        {
+            try
+            {
+                return _menuItems[_position];
+            }
+            catch(IndexOutOfRangeException)
+            {
+                throw new InvalidOperationException();
+            }
+        }
+    }
+
+    object IEnumerator.Current => Current;
 
     #endregion
 
@@ -20,16 +43,20 @@ public class DinerMenuIterator: IIterator<MenuItem>
 
     #region Public Methods
 
-    public bool HasNext()
+    public void Dispose()
     {
-        return _position < _menuItems.Length && _menuItems[_position] != null;
+        throw new NotImplementedException();
     }
 
-    public MenuItem Next()
+    public bool MoveNext()
     {
-        var menuItem = _menuItems[_position];
         _position++;
-        return menuItem;
+        return _position < _menuItems.Length - 2;
+    }
+
+    public void Reset()
+    {
+        _position = -1;
     }
 
     #endregion

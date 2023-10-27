@@ -9,27 +9,29 @@ public class Waitress
 
     private readonly IMenu _dinerMenu;
     private readonly IMenu _pancakeHouseMenu;
+    private readonly IMenu _cafeMenu;
 
     #endregion
 
     #region Construction
 
-    public Waitress(IMenu pancakeHouseMenu, IMenu dinerMenu)
+    public Waitress(IMenu pancakeHouseMenu, IMenu dinerMenu, IMenu cafeMenu)
     {
         _pancakeHouseMenu = pancakeHouseMenu;
         _dinerMenu = dinerMenu;
+        _cafeMenu = cafeMenu;
     }
 
     #endregion
 
     #region Private Methods
 
-    private static void PrintMenu(IIterator<MenuItem> iterator)
+    private static void PrintMenu(IEnumerator<MenuItem> iterator)
     {
-        while(iterator.HasNext())
+        while(iterator.MoveNext())
         {
-            var menuItem = iterator.Next();
-            Console.Write(menuItem.Name + ",");
+            var menuItem = iterator.Current;
+            Console.Write(menuItem!.Name + ",");
             Console.Write(menuItem.Price + ",");
             Console.Write(menuItem.Description + ",");
         }
@@ -43,11 +45,14 @@ public class Waitress
     {
         var pancakeIterator = _pancakeHouseMenu.CreateIterator();
         var dinerIterator = _dinerMenu.CreateIterator();
-
+        var cafeIterator = _cafeMenu.CreateIterator();
+        
         Console.WriteLine("MENU \n ---- \n BREAKFAST");
         PrintMenu(pancakeIterator);
         Console.WriteLine("\n LUNCH");
         PrintMenu(dinerIterator);
+        Console.WriteLine("\n CAFE");
+        PrintMenu(cafeIterator);
     }
 
     #endregion

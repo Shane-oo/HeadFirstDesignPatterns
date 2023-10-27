@@ -36,7 +36,7 @@ public class PancakeHouseMenu :IMenu
 
     #region Public Methods
 
-    public IIterator<MenuItem> CreateIterator()
+    public IEnumerator<MenuItem> CreateIterator()
     {
         return new PancakeHouseIterator(_menuItems);
     }

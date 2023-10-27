@@ -1,13 +1,34 @@
-using Chapter9.IteratorPattern.Menus.Iterators;
+using System.Collections;
 
 namespace Chapter9.IteratorPattern;
 
-public class PancakeHouseIterator: IIterator<MenuItem>
+public class PancakeHouseIterator: IEnumerator<MenuItem>
 {
     #region Fields
 
     private readonly List<MenuItem> _menuItems;
-    private int position;
+    private int _position = -1;
+
+    #endregion
+
+    #region Properties
+
+    public MenuItem Current
+    {
+        get
+        {
+            try
+            {
+                return _menuItems[_position];
+            }
+            catch(IndexOutOfRangeException)
+            {
+                throw new InvalidOperationException();
+            }
+        }
+    }
+
+    object IEnumerator.Current => Current;
 
     #endregion
 
@@ -22,17 +43,20 @@ public class PancakeHouseIterator: IIterator<MenuItem>
 
     #region Public Methods
 
-    public bool HasNext()
+    public void Dispose()
     {
-        // double check
-        return _menuItems.Count != position;
+        throw new NotImplementedException();
     }
 
-    public MenuItem Next()
+    public bool MoveNext()
     {
-        var menuItem = _menuItems[position];
-        position++;
-        return menuItem;
+        _position++;
+        return _position < _menuItems.Count;
+    }
+
+    public void Reset()
+    {
+        _position = -1;
     }
 
     #endregion

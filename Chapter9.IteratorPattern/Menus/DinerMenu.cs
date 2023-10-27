@@ -52,7 +52,7 @@ public class DinerMenu: IMenu
 
     #region Public Methods
 
-    public IIterator<MenuItem> CreateIterator()
+    public IEnumerator<MenuItem> CreateIterator()
     {
         return new DinerMenuIterator(_menuItems);
     }
