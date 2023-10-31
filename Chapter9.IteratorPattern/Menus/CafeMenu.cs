@@ -1,5 +1,6 @@
 namespace Chapter9.IteratorPattern.Menus;
 
+// Unused
 public class CafeMenu: IMenu
 {
     #region Fields

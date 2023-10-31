@@ -1,7 +1,7 @@
 using Chapter9.IteratorPattern.Menus.Iterators;
 
 namespace Chapter9.IteratorPattern.Menus;
-
+// Unused
 public class PancakeHouseMenu :IMenu
 {
     #region Fields
