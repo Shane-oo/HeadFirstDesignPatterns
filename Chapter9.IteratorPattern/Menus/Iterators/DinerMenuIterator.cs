@@ -51,8 +51,7 @@ public class DinerMenuIterator: IEnumerator<MenuItem>
     public bool MoveNext()
     {
         _position++;
-//todo this should check for if current is not null, as it is an array with fixed size
-        return _position < _menuItems.Length - 2;
+        return _position < _menuItems.Length && Current != null;
     }
 
     public void Reset()
